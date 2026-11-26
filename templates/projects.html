@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+
+{% block title %}Projects | Sathvika{% endblock %}
+
+{% block content %}
+
+<section class="content-section">
+
+    <div class="section-heading">
+        <p class="section-label">WHAT I HAVE BUILT</p>
+        <h1>Featured Projects</h1>
+    </div>
+
+    <div class="project-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+
+            <h3>AI Smart Traffic Management System</h3>
+
+            <p>
+                A smart traffic management application that uses
+                computer vision and vehicle density analysis to
+                improve traffic signal management. It also aims
+                to prioritize emergency vehicles.
+            </p>
+
+            <div class="project-tools">
+                <span class="tool-tag">Python</span>
+                <span class="tool-tag">OpenCV</span>
+                <span class="tool-tag">YOLO</span>
+                <span class="tool-tag">Machine Learning</span>
+            </div>
+
+        </div>
+
+
+        <!-- Project 2 -->
+        <div class="project-card">
+
+            <h3>Hospital Appointment System</h3>
+
+            <p>
+                A Python-based application for managing doctors,
+                patients and hospital appointments. It supports
+                appointment booking, cancellation and searching.
+            </p>
+
+            <div class="project-tools">
+                <span class="tool-tag">Python</span>
+                <span class="tool-tag">FastAPI</span>
+                <span class="tool-tag">SQL</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

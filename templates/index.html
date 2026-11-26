@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home | My Portfolio{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <p class="intro">WELCOME TO MY PORTFOLIO</p>
+
+        <h1>Hello, I'm <span>Sathvika</span></h1>
+
+        <h2>Full Stack Python Developer</h2>
+
+        <p class="description">
+            I am a Computer Science Engineering student
+            passionate about Python programming and web development.
+            I enjoy creating useful applications and learning new technologies.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/projects" class="btn">
+                View My Projects
+            </a>
+
+            <a href="/contact" class="btn secondary-btn">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-image">
+
+        <img
+            src="{{ url_for('static', path='/images/profile.jpeg') }}"
+            alt="Sathvika's profile photo"
+        >
+
+    </div>
+
+</section>
+
+{% endblock %}

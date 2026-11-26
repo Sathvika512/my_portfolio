@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}My Portfolio{% endblock %}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', path='/css/style.css') }}?v=2">
+</head>
+
+<body class="{{ 'dark-mode' if request.cookies.get('theme', 'light') == 'dark' else 'light-mode' }}">
+
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="/" class="logo">Sathvika<span>.dev</span></a>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/skills">Skills</a>
+                <a href="/education">Education</a>
+                <a href="/projects">Projects</a>
+                <a href="/contact">Contact</a>
+            </div>
+
+            <form action="/theme" method="post" class="theme-form">
+
+                {% if request.cookies.get('theme', 'light') == 'light' %}
+
+                    <input type="hidden" name="theme" value="dark">
+
+                    <input type="hidden"
+                           name="next_page"
+                           value="{{ request.url.path }}">
+
+                    <button type="submit" class="theme-btn">
+                        🌙 Dark
+                    </button>
+
+                {% else %}
+
+                    <input type="hidden" name="theme" value="light">
+
+                    <input type="hidden"
+                           name="next_page"
+                           value="{{ request.url.path }}">
+
+                    <button type="submit" class="theme-btn">
+                        ☀️ Light
+                    </button>
+
+                {% endif %}
+
+            </form>
+
+        </nav>
+    </header>
+
+
+    <main class="container">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <footer class="footer">
+        <p>© 2026 My Portfolio | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
